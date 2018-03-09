@@ -150,6 +150,8 @@ The `./data/places.txt` sample file, for reference, was created like:
 wget http://download.geofabrik.de/north-america/us/washington-latest.osm.pbf
 mason install osmium-tool 1.7.1
 mason link osmium-tool 1.7.1
+# create config for osmium-tool to only export data with the `name` tag
+echo '{ "include_tags": [ "name" ] }' > export-config.json
 # convert OSM data to ldjson with http://docs.osmcode.org/osmium/latest/osmium-export.html
 ./mason_packages/.link/bin/osmium export washington-latest.osm.pbf -o washington-latest.json -f geojsonseq -c export-config.json
 # convert to simplified csv for the downstream example project to use (avoids needing to parse geojson)
