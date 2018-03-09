@@ -97,9 +97,9 @@ The writeup should include:
 - c) reasoning behind any performance or efficiency changes you made (or issues you see)
 - d) a clear summary of how much performance or efficiency impact your code changed had (or could have)
 
-### 2) A set of changes in the form of a diff
+### 2) A diff
 
-Create a diff with `git diff` including all changes to the build system and/or code.
+If you made changes, please create a diff of them with `git diff > changes.diff`. On our end, when we review your work, we should be able to apply the diff with `git apply changes.diff` to ensure any code changes build and run for us.
 
 ### Your audience
 
