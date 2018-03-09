@@ -1,13 +1,25 @@
+# C++ Builds & Performance Engineer Homework
+
+This README.md describes a homework assignment for applicants to work with Core Tech (@mapbox/core-tech).
+
 ## Background
 
 The Core Tech team develops many single-purpose C++ libraries and brings them together into larger applications using the C++ packaging tool called [mason](https://github.com/mapbox/mason/).
 
+We are a friendly and collaborative group of developers that pride ourselves on fostering an inclusive environment.
+
+We are responsible for building and maintaining a set of algorithms, specifications, and data processing pipelines for working with geographical data and creating [Vector Tiles](https://www.mapbox.com/vector-tiles/specification/).
+
+We thrive when we create space for creativity, curiosity, and helping each other brainstorm the best ideas.
+
+We always aim for code to be well tested, superbly documented, and beautifully packaged.
+
 We are looking for someone who can help us scale our development by bringing:
 
- - A high level of attention to detail for code quality and performance
+ - A high level of attention to detail for C++ code quality and performance
  - A desire to notice things that might go wrong before they do
- - A will to struggle past seemingly obscure compile and linker errors
- - A penchant for diving deep into all the interesting - expected and unexpected - problems of low level code that arise along the way
+ - A will to struggle through seemingly obscure compile and linker errors as a necessary challenge of C++ development and a learning opportunity for saving yourself and others time in the future
+ - A penchant for diving deep into all the interesting - expected and unexpected - problems of low level performance that arise along the way
  - An ability to assemble a holistic view the system, all the way from code and build systems to packaging and production benchmarking
  - A talent for writing and communicating their work so the team can follow along and learn
 
@@ -43,15 +55,15 @@ We'd like you to dig into the sample project (code + builds system) as if:
 - After your work is done the command line program inside the code, called `nearest-places` will be:
   - packaged in mason
   - deployed to production
-  - sent input data that is > 1 GB of data (so even larger than the sample data included below)
+  - sent input data that is > 1 GB (so even larger than the sample data included below)
 
 Please plan to spend around 2-3 hours on this exercise. We are not looking for perfection or any particular result. Rather we want to learn:
 
  - how you approach problem solving
  - how you communicate what you understand and what you don't
- - how comfortable you are in adapting to the modular way that we structure C++ code.
+ - how comfortable you are in adapting to the modular way that we structure C++ code
 
-So, to recap, your exercise is to dig into the code and build system in this repo with the knowledge it will soon go into production. Since you won't have time to fix everything possible, we want you to focus on what you can fix, and write about what more you'd do if you have more time.
+So, to recap, your exercise is to dig into the code and build system in this repo with the knowledge it will soon go into production and either make changes or or write up what should be changed. Since you won't have time to fix or even explore everything possible, we want you to focus on what you see, and write about what more you'd do if you had additional time.
 
 Specifically, we recommend you:
 
@@ -63,11 +75,14 @@ Specifically, we recommend you:
   - Parsing a CSV file of locations (`./data/places.txt`)
   - Calculating the distance from a hard-coded query point to each place in the input data
   - Finding the top 10 closest locations in the input data to the query point
-  - Printing those 10 locations to the console.
+  - Printing those 10 locations to the console
 - Review the code and build system to:
   - identify problems related to compiling, linking, robustness, or security
   - identify code [optimizations](https://github.com/mapbox/cpp/blob/master/glossary.md#optimization-technique)
-- Use the `time ./cmake-build/nearest-places ./data/places.txt` command or `make bench` to evaluate performance impacts of any changes you make to the build system or code.
+- Use the `time ./cmake-build/nearest-places ./data/places.txt` command or `make bench` to evaluate performance impacts of any changes you make to the build system or code
+
+
+## Your response
 
 We'd like you to provide us with two products:
 
@@ -75,8 +90,8 @@ We'd like you to provide us with two products:
 
 - a) how you built the code
 - b) what problems you identified along the way in building or running the code and what you did (or would do) to try to solve them
-- c) reasoning behind any performance or efficiency changes you see (or made).
-- d) a clear summary of how much performance or efficiency impact your code changed had (or could have).
+- c) reasoning behind any performance or efficiency changes you mader (or issues you see)
+- d) a clear summary of how much performance or efficiency impact your code changed had (or could have)
 
 2) A set of changes, in the form of a diff, to the code or build system you made while working. Create this by running `git diff`.
 
@@ -158,4 +173,4 @@ echo '{ "include_tags": [ "name" ] }' > export-config.json
 node scripts/geojson2csv.js washington-latest.json > ./data/places.txt
 ```
 
-The assumption should be that `nearest-places` will be deployed to production and used to process much larger, likely GB size, csv files.
+The assumption should be that `nearest-places` will be deployed to production and used to process much larger, multi GB size, csv files.
