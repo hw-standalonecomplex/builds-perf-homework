@@ -31,16 +31,16 @@ If you join the team we'll be looking for you to:
 
 ## A representative problem
 
-Today we'd like to engage you, in a hands on way, with a small codebase that reflects recent challenges we've faced in writing and building robust and high performance C++ code.
+Today we'd like to engage you, in a hands on way, with a small codebase that reflects recent challenges we've faced in developing robust and high performance C++ code.
 
 The code is meant to reflect what a programmer, new to C++, might write at Mapbox in that:
 
- - The project layout is based on the Core Tech team's https://github.com/mapbox/hpp-skel conventions such that it contains:
+ - The project layout is based on the conventions of https://github.com/mapbox/hpp-skel, containing:
    - benchmarks
    - unit tests
    - modular code spread across the `include/`, `./test`, and `./bin` directories
    - a `Makefile` wrapper around a cmake build system
- - It uses modern C++14 features and various libraries from mason as dependencies
+ - It uses modern C++14 features and various libraries from `mason` as dependencies
  - It deals with parsing and querying geographical data extracted from OpenStreetMap
  - It contains a variety of mistakes from human error
  - It contains significant (but potentially non-obvious) potential for performance optimization
@@ -53,7 +53,7 @@ We'd like you to dig into the sample project (code + builds system) as if:
 - The developer who wrote the code is on an extended vacation
 - You've been ask to take full responsibility for the project
 - After your work is done the command line program inside the code, called `nearest-places` will be:
-  - packaged in mason
+  - packaged in `mason`
   - deployed to production
   - sent input data that is > 1 GB (so even larger than the sample data included below)
 
@@ -63,7 +63,9 @@ Please plan to spend around 2-3 hours on this exercise. We are not looking for p
  - how you communicate what you understand and what you don't
  - how comfortable you are in adapting to the modular way that we structure C++ code
 
-So, to recap, your exercise is to dig into the code and build system in this repo with the knowledge it will soon go into production and either make changes or or write up what should be changed. Since you won't have time to fix or even explore everything possible, we want you to focus on what you see, and write about what more you'd do if you had additional time.
+So, to recap, your exercise is to dig into the code and build system in this repo with the knowledge it will soon go into production. With that in mind either make changes or write up what you would change.
+
+Since you won't have time to fix or even explore everything possible, we want you to focus on what you see, and write about what more you'd do if you had additional time.
 
 Specifically, we recommend you:
 
@@ -86,14 +88,20 @@ Specifically, we recommend you:
 
 We'd like you to provide us with two products:
 
-1) A writeup of:
+### 1) A writeup
+
+The writeup should include:
 
 - a) how you built the code
 - b) what problems you identified along the way in building or running the code and what you did (or would do) to try to solve them
-- c) reasoning behind any performance or efficiency changes you mader (or issues you see)
+- c) reasoning behind any performance or efficiency changes you made (or issues you see)
 - d) a clear summary of how much performance or efficiency impact your code changed had (or could have)
 
-2) A set of changes, in the form of a diff, to the code or build system you made while working. Create this by running `git diff`.
+### 2) A set of changes in the form of a diff
+
+Create a diff with `git diff` including all changes to the build system and/or code.
+
+### Your audience
 
 Write as if your audience is the original developer of the code and you want to help them learn - when they return from vacation - what you learned in improving their code.
 
@@ -106,12 +114,12 @@ This project includes a mostly working C++ project.
 
 Building depends on:
 
- - Either clang++ >= 4.x or g++ >= 4.9
+ - Either `clang++` >= 4.x or g++ >= 4.9
  - C++14 support (on ubuntu that means `libstdc++` development headers >= 4.9 are installed, like `apt-get install libstdc++-4.9-dev`)
- - curl command line tool
- - make
- - cmake
- - A http connection to allow mason to download packages (called by cmake)
+ - `curl` command line tool
+ - `make`
+ - `cmake`
+ - A http connection to allow `mason` to download packages (called by `cmake`)
 
 You can build with:
 
@@ -129,7 +137,7 @@ You can clean the build with:
 
  - make clean
 
-You can clean the downloaded mason dependencies with:
+You can clean the downloaded `mason` dependencies with:
 
  - make distclean
 
