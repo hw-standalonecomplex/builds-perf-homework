@@ -28,8 +28,15 @@ int main(int argc, char* argv[]) {
 
         // Use Pike Market in Seattle for our query point
         mapbox::geometry::point<double> query_pt(-122.341,47.60941);
+        
+        // Limit to just returning the nearest 10 locations
         std::size_t limit = 10;
+
+        // Run the query!
         std::vector<homework::place_type> results = homework::run_query(stream,query_pt,limit);
+        
+        // Report the results. The assumption should be that some other tool ingests these results
+        // and expects this exact output below.
         std::clog << "Top nearest " << limit  << " locations:\n";
         for (auto const& place_type : results) {
             std::clog << place_type.name << "\n";
