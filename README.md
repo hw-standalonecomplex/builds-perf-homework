@@ -1,6 +1,6 @@
 # C++ Builds & Performance Engineer Homework
 
-This README.md describes a homework assignment for applicants to work with Core Tech (@mapbox/core-tech).
+This README.md describes a homework assignment for applicants to the [C++ Builds and Performance Engineer position](https://boards.greenhouse.io/mapbox/jobs/974606) working within the Core Tech at Mapbox.
 
 ## Background
 
